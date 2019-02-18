@@ -1,0 +1,16 @@
+def spy_game(nums):
+    if 0 in nums:                       #if 0 is in the list
+        first=nums.index(0)             #find where the first one is in the list
+        #print(f'0(1) at {first}')      
+        nums2=nums[first+1:]            #cut the list so that new list is from the next position after the first 0
+        #print(nums2)
+        if 0 in nums2:                  #check is there is anothe 0 in the new list
+            second=nums2.index(0)       # if there is, check its position
+            #print(f'0(2) at {second}')
+            nums3=nums2[second+1:]      #cut the list, so that 3rd list is from the next position after the second 0
+            #print(nums3)
+            return 7 in nums3           #return Boolian if 7 is in list3 (means 007 is in the whole list
+        else:
+            return False                # otherwise return False
+    else: 
+        return False   
